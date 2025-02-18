@@ -2,7 +2,7 @@
     --azul: #016180;
     --celeste: #4A8CB0;
     --crema: #F8EDE5;
-    --cafe: #8C5C47;
+    --cafe: #a88474;
     --marron: #4C2C17;
 }
 body, html {
@@ -24,7 +24,7 @@ body, html {
     flex-direction: column; 
 }
 .left-side {
-    background-color: var(--celeste);
+    background-color: var(--azul);
     background-size: cover;
     color: black;
     padding: 20px;
@@ -41,13 +41,13 @@ body, html {
 .form-container {
     max-width: 400px;
     width: 100%;
-    background-color: var(--azul);
+    background-color: var(--celeste);
     border-radius: 8px;
     padding: 20px;
 }
 .btn {
-    background-color: var(--crema);
-    color: #000000;
+    background-color: var(--azul);
+    color: #ffffff;
     font-size: 20px;
 }
 .btn:hover {
