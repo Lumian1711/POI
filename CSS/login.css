@@ -1,0 +1,64 @@
+:root{
+    --azul_A: #1f477a;
+    --azul_B: rgb(114, 125, 216);
+    --azul_C: rgb(134, 146, 255);
+    --amarillo: #f0c266;
+    --naranja: #ce8a46;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+.container-fluid {
+    display: flex;
+    height: 100vh; 
+    width: 100%;
+}
+.left-side, .right-side {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+}
+.left-side {
+    background: url('fondo.jpg') no-repeat center center;
+    background-size: cover;
+    color: black;
+    padding: 20px;
+}
+.left-side img {
+    max-width: 400px; 
+    margin-bottom: 20px; 
+}
+.right-side {
+    background-color: var(--azul_A); 
+    color: black;
+    font-family: 'Hahmlet', sans-serif;
+}
+.form-container {
+    max-width: 400px;
+    width: 100%;
+    background-color: var(--amarillo);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+.btn {
+    background-color: #fff;
+    color: #000000;
+    font-size: 20px;
+    border: 1px solid #ffffff;
+}
+.btn:hover {
+    background-color: var(--azul_B);
+    color: #fff;
+}
+a {
+    color: black;
+}
+a:hover {
+    color: #333;
+}
