@@ -1,9 +1,9 @@
 :root{
-    --azul_A: #1f477a;
-    --azul_B: rgb(114, 125, 216);
-    --azul_C: rgb(134, 146, 255);
-    --amarillo: #f0c266;
-    --naranja: #ce8a46;
+    --azul: #016180;
+    --celeste: #4A8CB0;
+    --crema: #F8EDE5;
+    --cafe: #8C5C47;
+    --marron: #4C2C17;
 }
 body, html {
     margin: 0;
@@ -24,7 +24,7 @@ body, html {
     flex-direction: column; 
 }
 .left-side {
-    background: url('fondo.jpg') no-repeat center center;
+    background-color: var(--celeste);
     background-size: cover;
     color: black;
     padding: 20px;
@@ -34,26 +34,24 @@ body, html {
     margin-bottom: 20px; 
 }
 .right-side {
-    background-color: var(--azul_A); 
-    color: black;
+    background-color: var(--cafe); 
+    color: rgb(255, 255, 255);
     font-family: 'Hahmlet', sans-serif;
 }
 .form-container {
     max-width: 400px;
     width: 100%;
-    background-color: var(--amarillo);
+    background-color: var(--azul);
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
 }
 .btn {
-    background-color: #fff;
+    background-color: var(--crema);
     color: #000000;
     font-size: 20px;
-    border: 1px solid #ffffff;
 }
 .btn:hover {
-    background-color: var(--azul_B);
+    background-color: var(--marron);
     color: #fff;
 }
 a {
