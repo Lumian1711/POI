@@ -1,7 +1,58 @@
 :root{
-    --azul_A: #053F5C;
-    --azul_B: #429EBD;
-    --azul_C: #9FE7F5;
-    --amarillo: #F7AD19;
-    --naranja: #F27F0C;
+    --azul: #016180;
+    --celeste: #4A8CB0;
+    --crema: #F8EDE5;
+    --cafe: #a88474;
+    --marron: #4C2C17;
+}
+body{
+    height: 100vh;
+    background-color: var(--azul);
+}
+.nav{
+    background-color: var(--celeste);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    padding: 10px 14px;
+}
+.nav header{
+    position: relative;
+}
+/*===========LOGO===========*/
+.nav .textHeader{
+    font-size: 16px;
+    font-weight: 500;
+}
+.nav .imageLogo{
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+}
+.nav .logo img{
+    width: 40px;
+    border-radius: 6px;
+}
+.nav header .logo{
+    display: flex;
+    align-items: center;
+}
+header .logo .proyecto{
+    display: flex;
+    flex-direction: column;
+}
+.nav header .options{
+    position: absolute;
+    top: 50%;
+    left: -25px;
+    transform: translateY(-50%);
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20%;
+    font-size: 22px;
 }

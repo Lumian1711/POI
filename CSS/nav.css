@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+:root{
+    --azul: #016180;
+    --celeste: #4A8CB0;
+    --crema: #F8EDE5;
+    --cafe: #a88474;
+    --marron: #4C2C17;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;  
+  font-family: 'Outfit', sans-serif;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    background-color: var(--marron);
+}
+.barra{
+    width: 250px;
+    height: 100%;
+    overflow: hidden;
+    padding: 20px 15px;
+    background-color: var(--azul);
+    transition: width 0.5s ease;
+}
+.mini-lateral{
+    width: 80px;
+}
+.barra .nombre-pagina{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+}
+.barra img{
+    min-width: 50px;
+    font-size: 40px;
+    cursor: pointer;
+}
+.barra .nombre-pagina span{
+    font-size: 20px;
+    margin-left: 5px;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+.barra .nombre-pagina span.oculto{
+    opacity: 0;
+}

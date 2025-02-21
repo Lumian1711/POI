@@ -9,31 +9,44 @@
 </head>
 <body>
     <!--nav-->
-    <nav>
-        <div class="nav">
-            <button>Opciones</button>
-            <button>Chats</button>
-        </div>
-    </nav>
-    <div class="contenedor-chats">
-        <div class="busqueda">
-            <h2>Chats</h2>
-            <button>Agregar</button>
-            <input type="text" placeholder="Buscar o iniciar chat">
-        </div>
-        <div class="chatList">
-            <ul>
-                <li>
-                    <img src="/Imagenes/vector-book-icon.jpg" alt="">
-                    <h4>Nombre</h4>
-                    <p>Ultimo mensaje en el chat</p>
-                </li>
-            </ul>
-        </div>
-        <div class="chat">
+    <nav class="nav">
+        <header>
+            <div class="logo">
+                <span class="imageLogo">
+                    <img src="/Imagenes/vector-book-icon.jpg">
+                </span>
+                <div class="textHeader">
+                    <span class="proyecto">Proyecto</span>
+                </div>            
+            </div>
+            <button class="options" >></button>
+        </header>
 
+        <div class="menu-bar">
+            <div class="menu">
+                <ul class="menu-op">
+                    <li class="nav-op">
+                        <a href="#">
+                            <span>✉️</span>
+                            <span class="text nav-text">Chats</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="menu-op">
+                    <li class="nav-op">
+                        <a href="#">
+                            <span>🫂</span>
+                            <span class="text nav-text">Grupos</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <button class="btnNav" >🏆</button>
         </div>
-    </div>
+
+
+    </nav>
+    
 </body>
 <script src="/JS/bootstrap.min.js"></script>
 <script src="/JS/jquery-3.7.1.min.js"></script>
