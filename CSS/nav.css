@@ -28,9 +28,25 @@ body{
 .mini-lateral{
     width: 80px;
 }
+.barra span{
+    width: 100px;
+    white-space: nowrap;
+    font-size: 18px;
+    text-align: left;
+    opacity: 1;
+    transition: opacity 0.5s ease, width 0.5s ease;
+}
+.barra span.oculto{
+    opacity: 0;
+    width: 0;
+}
+
+/*---------------NOMBRE DE LA PAGINA-----------------------------*/
+
 .barra .nombre-pagina{
     width: 100%;
     height: 45px;
+    margin-bottom: 40px;
     display: flex;
     align-items: center;
 }
@@ -40,11 +56,29 @@ body{
     cursor: pointer;
 }
 .barra .nombre-pagina span{
-    font-size: 20px;
     margin-left: 5px;
-    opacity: 1;
-    transition: opacity 0.5s ease;
+    font-size: 25px;
+    color: var(--crema);
 }
-.barra .nombre-pagina span.oculto{
-    opacity: 0;
+/*--------------BOTON AGREGAR CHAT------------------------------*/
+
+.barra .nuevo-chat{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--marron);
+    color: var(--crema);
+}
+.barra .nuevo-chat .material-symbols-outlined{
+    min-width: 50px;
+    font-size: 25px;
+}
+
+/*--------------MENU NAVEGACION------------------------------*/
+.barra .navegacion li{
+
 }
