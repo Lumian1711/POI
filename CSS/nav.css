@@ -152,8 +152,12 @@ body{
     font-size: 13px;
 }
 .barra .usuario svg{
+    min-width: 50px;
     font-size: 20px;
     cursor: pointer;
+}
+.barra .usuario svg:hover{
+    transform: scale(1.5);
 }
 main{
     margin-left: 250px;
