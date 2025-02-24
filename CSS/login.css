@@ -24,7 +24,7 @@ body, html {
     flex-direction: column; 
 }
 .left-side {
-    background-color: var(--crema);
+    background-color: var(--celeste);
     background-size: cover;
     color: black;
     padding: 20px;
@@ -34,7 +34,7 @@ body, html {
     margin-bottom: 20px; 
 }
 .right-side {
-    background-color: var(--azul); 
+    background-color: var(--marron); 
     color: rgb(255, 255, 255);
     font-family: 'Hahmlet', sans-serif;
 }
@@ -46,15 +46,14 @@ body, html {
     padding: 20px;
 }
 .btn {
-    background-color: var(--celeste);
-    color: #ffffff;
+    background-color: var(--azul);
+    color: var(--crema);
     font-size: 20px;
 
 }
 .btn:hover {
-    background-color: var(--azul);
-    font-size: 22px;
-    color: #fff;
+    background-color: var(--celeste);
+    transform: scale(1.05);
 }
 a {
     color: black;

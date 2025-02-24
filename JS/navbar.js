@@ -3,7 +3,7 @@ const lateral = document.querySelector('.barra');
 const spans = document.querySelectorAll('span');
 
 book.addEventListener('click', ()=>{
-    lateral.classList.toggle("mini-lateral");
+    lateral.classList.toggle("lateral");
     
     spans.forEach((span)=>{
         span.classList.toggle("oculto");

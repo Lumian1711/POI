@@ -22,10 +22,10 @@ body{
     height: 100%;
     overflow: hidden;
     padding: 20px 15px;
-    background-color: var(--azul);
+    background-color: var(--celeste);
     transition: width 0.5s ease;
 }
-.mini-lateral{
+.lateral{
     width: 80px;
 }
 .barra span{
@@ -55,6 +55,9 @@ body{
     font-size: 40px;
     cursor: pointer;
 }
+.barra #book:hover{
+    transform: scale(1.1);
+}
 .barra .nombre-pagina span{
     margin-left: 5px;
     font-size: 25px;
@@ -70,13 +73,18 @@ body{
     justify-content: center;
     border: none;
     border-radius: 10px;
-    background-color: var(--marron);
+    background-color:black;
     color: var(--crema);
 }
 .barra .nuevo-chat .material-symbols-outlined{
     min-width: 50px;
     font-size: 25px;
 }
+.barra .nuevo-chat:hover{
+    background-color: #361f10;
+    transform: scale(1.1);
+}
+
 
 /*--------------MENU NAVEGACION------------------------------*/
 .navegacion{
@@ -98,7 +106,8 @@ body{
     color: var(--crema);
 }
 .barra .navegacion a:hover{
-    background-color: var(--celeste);
+    background-color: var(--azul);
+    transform: scale(1.1);
 }
 .barra .navegacion svg{
     min-width: 50px;
@@ -108,7 +117,7 @@ body{
 .barra .linea{
     width: 100%;
     height: 1px;
-    background-color: var(--celeste);
+    background-color: var(--azul);
 }
 /*--------------USuARIO------------------------------*/
 .barra .usuario{
