@@ -158,7 +158,8 @@ body{
 main{
     margin-left: 250px;
     padding: 20px;
+    transition: margin-left 0.5s ease;
 }
-main.min-main{
+.grande{
     margin-left: 80px;
 }
