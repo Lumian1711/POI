@@ -1,10 +1,46 @@
 :root{
     --azul: #016180;
     --celeste: #4A8CB0;
-    --crema: #F8EDE5;
+    --crema: #f0d4c0;
     --cafe: #a88474;
     --marron: #4C2C17;
 }
 .barra .navegacion #logros{
     background-color: var(--azul);
+}
+/*--------LOGROS----------*/
+.main-contenedor{
+    height: 100%;
+    background-color: var(--crema);
+}
+.logros {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    
+}
+.main-contenedor h2{
+    padding: 10px;
+    font-weight: 600;
+    text-align: center;
+}
+.info-logro {
+    margin-top: 15;
+    margin-right: 40px;
+    margin-bottom: 10px;
+    background-color: var(--azul);
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+}
+.info-logro img {
+    width: 200px;
+    height: 200px; 
+    object-fit: cover; 
+}
+.info-logro .nombre-descripcion{
+    color: var(--crema);
+    align-items: center;
+    justify-content: center;
 }

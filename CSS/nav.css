@@ -12,11 +12,7 @@
   box-sizing: border-box;  
   font-family: 'Outfit', sans-serif;
 }
-body{
-    height: 100vh;
-    width: 100%;
-    background-color: var(--marron);
-}
+
 .barra{
     position: fixed;
     width: 250px;
@@ -74,7 +70,7 @@ body{
     justify-content: center;
     border: none;
     border-radius: 10px;
-    background-color:black;
+    background-color:var(--marron);
     color: var(--crema);
 }
 .barra .nuevo-chat .material-symbols-outlined{
@@ -82,7 +78,7 @@ body{
     font-size: 25px;
 }
 .barra .nuevo-chat:hover{
-    background-color: #361f10;
+    background-color: black;
     transform: scale(1.1);
 }
 
@@ -145,21 +141,19 @@ body{
     margin-left: 5px;
 }
 .barra .usuario .nombre{
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 600;
+    color: var(--marron);
 }
 .barra .usuario .correo{
     font-size: 13px;
 }
 .barra .usuario svg{
-    min-width: 50px;
-    font-size: 20px;
     cursor: pointer;
 }
-.barra .usuario svg:hover{
-    transform: scale(1.5);
-}
 main{
+    height: 100vh;
+    background-color: var(--marron);
     margin-left: 250px;
     padding: 20px;
     transition: margin-left 0.5s ease;
