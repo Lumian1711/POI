@@ -1,0 +1,76 @@
+:root {
+    --azul: #016180;
+    --celeste: #4A8CB0;
+    --crema: #F8EDE5;
+    --cafe: #a88474;
+    --marron: #4C2C17;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1e1f22;
+    color: var(--crema);
+    font-family: 'Outfit', sans-serif;
+}
+.call-container {
+    text-align: center;
+}
+.users-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    width: 80vw;
+    height: 80vh;
+    align-items: center;
+}
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user-avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid var(--celeste);
+}
+.user-name {
+    margin-top: 10px;
+    font-size: 18px;
+}
+.call-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    font-size: 24px;
+    margin: 10px;
+    cursor: pointer;
+}
+.call-btn.call {
+    background-color: var(--azul);
+    color: var(--crema);
+}
+.call-btn.hangup {
+    background-color: var(--marron);
+    color: var(--crema);
+}
+.call-btn.video {
+    background-color: var(--cafe);
+    color: var(--crema);
+}
+.call-btn:hover{
+    transform: scale(1.2);
+}
+a{
+    color: transparent;
+}

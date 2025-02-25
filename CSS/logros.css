@@ -8,6 +8,9 @@
 .barra .navegacion #logros{
     background-color: var(--azul);
 }
+*{
+    font-family: 'Outfit', sans-serif;
+}
 /*--------LOGROS----------*/
 .main-contenedor{
     height: 100%;
@@ -18,7 +21,6 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    
 }
 .main-contenedor h2{
     padding: 10px;

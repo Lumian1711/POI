@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
 :root{
     --azul: #016180;
     --celeste: #4A8CB0;
@@ -6,6 +8,7 @@
     --marron: #4C2C17;
 }
 body, html {
+    font-family: 'Outfit', sans-serif;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -27,16 +30,18 @@ body, html {
     background-color: var(--celeste);
     background-size: cover;
     color: black;
-    padding: 20px;
 }
 .left-side img {
     max-width: 400px; 
     margin-bottom: 20px; 
 }
+.left-side label{
+    color: var(--crema);
+    font-size: 80px;
+}
 .right-side {
     background-color: var(--marron); 
     color: rgb(255, 255, 255);
-    font-family: 'Hahmlet', sans-serif;
 }
 .form-container {
     max-width: 400px;
