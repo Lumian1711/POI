@@ -11,7 +11,7 @@
 /*--------LOGROS----------*/
 .main-contenedor{
     height: 100%;
-    background-color: var(--crema);
+    background-color: var(--cafe);
 }
 .logros {
     display: flex;
