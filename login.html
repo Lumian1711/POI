@@ -3,28 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/CSS/bootstrap.min.css">
-    <link rel="stylesheet" href="/CSS/login.css">
-    <link rel="icon" href="/Imagenes/LOGO/Color-ico.ico" type="image/x-icon">
-    <title>Registro</title>
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/login.css">
+    <link rel="icon" href="Imagenes/LOGO/Color-ico.ico" type="image/x-icon">
+    <title>Inicio de sesión</title>
 </head>
 <body>
     <div class="container-fluid">
         <div class="left-side">
-            <img src="/Imagenes/LOGO/Color-ico.ico" width="300px"> 
+            <img src="Imagenes/LOGO/Color-ico.ico" width="300px"> 
             <label>Chatify</label>
         </div>
         <div class="right-side">
             <div class="form-container">
-                <h2>Registra tus datos</h2>
+                <h2>Iniciar Sesión</h2>
                 <form method="POST" action="">
                     <div class="mb-3">
-                        <label class="form-label">Nombre de usuario</label>
-                        <input id="txtUsuario" name="txtUsuario" class="form-control"type="text" required placeholder="Nombre de usuario">
-                    </div>
-                    <div class="mb-3">
                         <label class="form-label">Correo</label>
-                        <input id="txtCorreo" name="txtUsuario" class="form-control"type="text" required placeholder="@email.com">
+                        <input id="txtUsuario" name="txtUsuario" class="form-control"type="text" required placeholder="Nombre de usuario">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Contraseña</label>
@@ -32,10 +28,10 @@
                     </div>
                     <div class="d-grid">
                         <!--<input id="btnLogin" value="Iniciar sesión" type="submit" class="btn" href="/vistas/chats.html">-->
-                        <a id="btnLogin" class="btn" href="/vistas/login.html">Registar</a>
+                        <a id="btnLogin" class="btn" href="chats.html">Iniciar sesión</a>
                     </div>
                     <div class="mt-3">
-                        <p>¿Ya tienes una cuenta? <a href="/vistas/login.html">Inicia sesión</a></p>
+                        <p>¿No tienes una cuenta? <a href="registro.html">Regístrate</a></p>
                     </div>
                 </form>
             </div>
