@@ -46,3 +46,23 @@
     align-items: center;
     justify-content: center;
 }
+form{
+    background-color: var(--azul);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding-block: 15px;
+    padding-inline: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form input{
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding-block: 5px;
+    padding-inline: 10px;
+}
+form textarea:focus{
+    outline: none;
+}
