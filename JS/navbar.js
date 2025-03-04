@@ -10,3 +10,20 @@ book.addEventListener('click',()=>{
         span.classList.toggle("oculto");
     });
 });
+document.getElementById("tipoChat").addEventListener("change", function() {
+let extraUsuarioDiv = document.getElementById("extraUsuario");
+
+if (this.value === "grupal") {
+    if (!document.getElementById("txtUsuario2")) {
+    let newInput = document.createElement("div");
+    newInput.classList.add("mb-3");
+    newInput.innerHTML = `
+        <label class="form-label">Segundo usuario</label>
+        <input id="txtUsuario2" name="txtUsuario2" class="form-control" type="text" required placeholder="Nombre del segundo usuario">
+    `;
+    extraUsuarioDiv.appendChild(newInput);
+    }
+} else {
+    extraUsuarioDiv.innerHTML = "";
+}
+});

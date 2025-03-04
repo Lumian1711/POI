@@ -141,15 +141,30 @@
     margin-left: 5px;
 }
 .barra .usuario .nombre{
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 600;
     color: var(--marron);
 }
 .barra .usuario .correo{
     font-size: 13px;
 }
-.barra .usuario svg{
-    cursor: pointer;
+.barra .usuario a{
+    text-align: center;
+    color: var(--crema);
+    background-color: var(--azul);
+}
+.barra .usuario a:focus{
+    color: var(--crema);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border: transparent;
+}
+.barra .usuario ul{
+    background-color: var(--azul);
+}
+.barra .usuario a:hover{
+    background-color: var(--marron);
 }
 main{
     height: 100vh;
@@ -160,4 +175,26 @@ main{
 }
 .grande{
     margin-left: 80px;
+}
+/*-------MODAL-------*/
+.modal-body{
+    margin: 5px;
+}
+.modal .btn{
+    background-color: var(--azul);
+    color: var(--crema);
+    border-radius: 10px;
+    margin-left: 15px;
+}
+.modal .btn:hover{
+    background-color: var(--marron);
+}
+.modal .btn:active{
+    color: var(--crema);
+}
+.modal-body form{
+    background-color: var(--cafe);
+    border-radius: 5px;
+    display: block;
+    color: var(--crema);
 }

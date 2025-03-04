@@ -96,7 +96,7 @@
     align-items: center;
 }
 
-.h-right a{
+.h-right .btn{
     background-color: var(--marron);
     color: var(--crema);
     border-radius: 10px;
