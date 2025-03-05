@@ -61,6 +61,34 @@
     </div>
 
     <!--MODALES-->
+        <!-- Modal Adjunto -->
+        <div class="modal fade" id="modalAdjunto" tabindex="-1" aria-labelledby="modalAdjuntoLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="modalAdjuntoLabel">Adjunto</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form method="POST" action="">
+                      <div class="mb-3">
+                        <label class="form-label">Archivo</label>
+                        <input class="form-control" type="file">
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Ubicacion</label>
+                        <button class="btn" >Ubicacion actual <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff"><path d="M480-480q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Zm0 294q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z"/></svg></button>
+                      </div>
+                    </form>
+                    
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn" data-bs-dismiss="modal">Cancelar</button>
+                      <button type="button" class="btn" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#modalAlert">Enviar</button>
+                  </div>
+              </div>
+          </div>
+        </div>
         <!-- Modal nuevo mensaje -->
         <div class="modal fade" id="modalNuevoMensaje" tabindex="-1" aria-labelledby="modalNuevoMensajeLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
@@ -234,15 +262,10 @@
                   <div class="h-left">
                       <div>
                           <img id="maestriaHader" src="Imagenes/LOGROS/carta.png" class="rounded-circle">
-                          <label>Nombre de usuario</label>
+                          <label>Nombre del grupo</label>
                       </div>
                   </div>
                   <div class="h-right">
-                      <a name="videocat" href="llamada.html" class="btn chat-privado">
-                          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
-                              <path d="M360-320h80v-120h120v-80H440v-120h-80v120H240v80h120v120ZM160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h480q33 0 56.5 23.5T720-720v180l160-160v440L720-420v180q0 33-23.5 56.5T640-160H160Zm0-80h480v-480H160v480Zm0 0v-480 480Z"/>
-                          </svg>
-                      </a>
                       <a id="opciones-usuario" class="btn chat-privado"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff"><path d="M222-200 80-342l56-56 85 85 170-170 56 57-225 226Zm0-320L80-662l56-56 85 85 170-170 56 57-225 226Zm298 240v-80h360v80H520Zm0-320v-80h360v80H520Z"/></svg></a>
                   </div>
               </div>
@@ -252,27 +275,27 @@
                   <div id="idChatMensaje" class="message message-usuario-1">
                       <img id="maestriaUsuario2" src="Imagenes/LOGROS/carta.png">
                       <div class="hour-message">
-                          <label class="user-1">Nombre de Usuario 2</label>
-                          <label class="text">Hola! ¿Ya leiste el libro que te recomende?</label>
+                          <label class="user-1">Nombre de Usuario 1</label>
+                          <label class="text">Hola?</label>
                           <label class="hour">00:00</label>
                       </div>
                   </div>
                   <div id="idChatMensaje" class="message message-usuario-2">
                       <div class="hour-message">
-                          <label class="user-2">Nombre de Usuario</label>
-                          <label class="text">¡Hola!</label>
+                          <label class="user-2">Nombre de Usuario 2</label>
+                          <label class="text">¡Qué hago aqui?</label>
                           <label class="hour">00:00</label>
                       </div>
                       <img id="maestriaUsuario" src="Imagenes/LOGROS/carta.png">
                   </div>
-                  <div id="idChatMensaje" class="message message-usuario-2">
-                      <div class="hour-message">
-                          <label class="user-2">Nombre de Usuario</label>
-                          <label class="text">¿Quien sos?</label>
-                          <label class="hour">00:00</label>
-                      </div>
-                      <img id="maestriaUsuario" src="Imagenes/LOGROS/carta.png">
-                  </div>
+                  <div id="idChatMensaje" class="message message-usuario-1">
+                    <img id="maestriaUsuario2" src="Imagenes/LOGROS/carta.png">
+                    <div class="hour-message">
+                        <label class="user-1">Nombre de Usuario 3</label>
+                        <label class="text">¡Mamá?</label>
+                        <label class="hour">00:00</label>
+                    </div>
+                </div>
               </div>
               <div id="tareas-contenido" class="d-none">
                   <form id="formTarea" class="mb-3">
@@ -301,6 +324,7 @@
               </div>
           </div>
           <form method="POST" class="chat-input">   
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modalAdjunto" id="btnFile" class="btn"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff"><path d="M720-330q0 104-73 177T470-80q-104 0-177-73t-73-177v-370q0-75 52.5-127.5T400-880q75 0 127.5 52.5T580-700v350q0 46-32 78t-78 32q-46 0-78-32t-32-78v-370h80v370q0 13 8.5 21.5T470-320q13 0 21.5-8.5T500-350v-350q-1-42-29.5-71T400-800q-42 0-71 29t-29 71v370q-1 71 49 120.5T470-160q70 0 119-49.5T640-330v-390h80v390Z"/></svg></button>
             <input type="text" placeholder="Escribe tu mensaje..." id="mensajeInput"></input>
             <button type="button" id="btnEnviar" class="btn btn-primary">Enviar</button>
         </form>
