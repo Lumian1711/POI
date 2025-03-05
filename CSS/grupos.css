@@ -190,3 +190,13 @@ form textarea:focus{
     background-color: black;
     color: white;
 }
+/*-----------TAREAS---------------*/
+#formTarea{
+    background-color: var(--celeste);
+    color: var(--crema);
+}
+#tareas-contenido .btn{
+    background-color: var(--marron);
+    margin: 5px;
+    color: var(--crema);
+}

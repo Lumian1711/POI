@@ -227,55 +227,88 @@
                 </li>
               </ul>
           </div>
-          <div class="chat col-7">
-            <div class="chat-header">
-                <div class="chat-header-user">
-                    <div class="h-left">
-                        <div>
+        <!-- CONTENEDOR CHAT y TAREAS-->
+        <div class="chat col-7" id="contenedorChat">
+          <div class="chat-header">
+              <div class="chat-header-user">
+                  <div class="h-left">
+                      <div>
                           <img id="maestriaHader" src="Imagenes/LOGROS/carta.png" class="rounded-circle">
-                          <label>Nombre del grupo</label>
-                        </div>
-                    </div>
-                    <div class="h-right">
-                      <a name="videocat" href="llamada.html" class="btn chat-privado"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M360-320h80v-120h120v-80H440v-120h-80v120H240v80h120v120ZM160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h480q33 0 56.5 23.5T720-720v180l160-160v440L720-420v180q0 33-23.5 56.5T640-160H160Zm0-80h480v-480H160v480Zm0 0v-480 480Z"/></svg></a>
-                      <a id="opciones" class="btn chat-privado"><svg id="opciones-usuario" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-160q-33 0-56.5-23.5T400-240q0-33 23.5-56.5T480-320q33 0 56.5 23.5T560-240q0 33-23.5 56.5T480-160Zm0-240q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm0-240q-33 0-56.5-23.5T400-720q0-33 23.5-56.5T480-800q33 0 56.5 23.5T560-720q0 33-23.5 56.5T480-640Z"/></svg></a>
-                    </div>
-                </div>
-            </div>
-            <div class="chat-messages overflow-auto">
-              <div id="idChatMensaje" class="message message-usuario-1">
-                <img id="maestriaUsuario2" src="Imagenes/LOGROS/carta.png">
-                <div class="hour-message">
-                    <label class="user-1">Nombre de Usuario 2</label>
-                    <label class="text">¡Hola!</label>
-                    <label class="hour">00:00</label>
-                </div>
+                          <label>Nombre de usuario</label>
+                      </div>
+                  </div>
+                  <div class="h-right">
+                      <a name="videocat" href="llamada.html" class="btn chat-privado">
+                          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                              <path d="M360-320h80v-120h120v-80H440v-120h-80v120H240v80h120v120ZM160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h480q33 0 56.5 23.5T720-720v180l160-160v440L720-420v180q0 33-23.5 56.5T640-160H160Zm0-80h480v-480H160v480Zm0 0v-480 480Z"/>
+                          </svg>
+                      </a>
+                      <a id="opciones-usuario" class="btn chat-privado"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff"><path d="M222-200 80-342l56-56 85 85 170-170 56 57-225 226Zm0-320L80-662l56-56 85 85 170-170 56 57-225 226Zm298 240v-80h360v80H520Zm0-320v-80h360v80H520Z"/></svg></a>
+                  </div>
               </div>
-              <div id="idChatMensaje" class="message message-usuario-2">
-                <div class="hour-message">
-                    <label class="user-2">Nombre de Usuario</label>
-                    <label class="text">¿Qué hago aquí?</label>
-                    <label class="hour">00:00</label>
-                </div>
-                <img id="maestriaUsuario" src="Imagenes/LOGROS/carta.png">
-              </div>
-              <div id="idChatMensaje" class="message message-usuario-1">
-                <img id="maestriaUsuario2" src="Imagenes/LOGROS/carta.png">
-                <div class="hour-message">
-                    <label class="user-1">Nombre de Usuario 3</label>
-                    <label class="text">¿Mamá?</label>
-                    <label class="hour">00:00</label>
-                </div>
-              </div>
-            </div>
-            <form method="POST" class="chat-input">   
-                <input type="text" placeholder="Escribe tu mensaje..." name="mensaje"></input>
-                <button id="btnEnviar" class="btn btn-primary">Enviar</button>
-            </form>
           </div>
+          <div class="chat-messages overflow-auto" id="contenidoChat">
+              <div id="chat-contenido">
+                  <div id="idChatMensaje" class="message message-usuario-1">
+                      <img id="maestriaUsuario2" src="Imagenes/LOGROS/carta.png">
+                      <div class="hour-message">
+                          <label class="user-1">Nombre de Usuario 2</label>
+                          <label class="text">Hola! ¿Ya leiste el libro que te recomende?</label>
+                          <label class="hour">00:00</label>
+                      </div>
+                  </div>
+                  <div id="idChatMensaje" class="message message-usuario-2">
+                      <div class="hour-message">
+                          <label class="user-2">Nombre de Usuario</label>
+                          <label class="text">¡Hola!</label>
+                          <label class="hour">00:00</label>
+                      </div>
+                      <img id="maestriaUsuario" src="Imagenes/LOGROS/carta.png">
+                  </div>
+                  <div id="idChatMensaje" class="message message-usuario-2">
+                      <div class="hour-message">
+                          <label class="user-2">Nombre de Usuario</label>
+                          <label class="text">¿Quien sos?</label>
+                          <label class="hour">00:00</label>
+                      </div>
+                      <img id="maestriaUsuario" src="Imagenes/LOGROS/carta.png">
+                  </div>
+              </div>
+              <div id="tareas-contenido" class="d-none">
+                  <form id="formTarea" class="mb-3">
+                      <label class="form-label">Nueva Tarea</label>
+                      <input id="inputTarea" class="form-control" type="text" placeholder="Escribe una tarea..." required>
+                      <button type="submit" class="btn mt-2">Agregar</button>
+                  </form>
+                  <div class="tareas-lista">
+                      <h4>Tareas</h4>
+                      <ul id="listaTareas" class="list-group">
+                          <li class="list-group-item">
+                              <input type="checkbox" class="form-check-input me-2">
+                              <label>Tarea 1</label>
+                          </li>
+                          <li class="list-group-item">
+                              <input type="checkbox" class="form-check-input me-2">
+                              <label>Tarea 2</label>
+                          </li>
+                          <li class="list-group-item">
+                              <input type="checkbox" class="form-check-input me-2">
+                              <label>Tarea 3</label>
+                          </li>
+                      </ul>
+                  </div>
+                  <button id="btnGuardar" class="btn"data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#modalAlert">Guardar Cambios</button>
+              </div>
+          </div>
+          <form method="POST" class="chat-input">   
+            <input type="text" placeholder="Escribe tu mensaje..." id="mensajeInput"></input>
+            <button type="button" id="btnEnviar" class="btn btn-primary">Enviar</button>
+        </form>
+      </div>
       </div>
     </main>
 </body>
+<script src="JS/tareas.js"></script>
 <script src="JS/jquery-3.7.1.min.js"></script>
 <script src="JS/navbar.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

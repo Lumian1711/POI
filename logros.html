@@ -93,6 +93,38 @@
               </div>
           </div>
         </div>
+        <!-- Modal LOGRO -->
+        <div class="modal fade" id="modalNuevoMensaje" tabindex="-1" aria-labelledby="modalLogroLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="modalNuevoMensajeLabel">Car</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form method="POST" action="">
+                      <div class="mb-3">
+                        <label class="form-label">Tipo de chat</label>
+                        <select class="form-control" name="tipoChat" id="tipoChat">
+                          <option value="privado">Privado</option>
+                          <option value="grupal">Grupal</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Nombre de usuario</label>
+                        <input id="txtUsuario" name="txtUsuario" class="form-control" type="text" required placeholder="Nombre de usuario">
+                      </div>
+                      <div id="extraUsuario"></div>
+                    </form>
+                    
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn" data-bs-dismiss="modal">Cancelar</button>
+                      <button type="button" class="btn" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#modalAlert">Crear chat</button>
+                  </div>
+              </div>
+          </div>
+        </div>
         <!-- Modal Editar usuario -->
         <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="modalEditarLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
@@ -165,7 +197,7 @@
       <div class="main-contenedor">
         <h2>MAESTRIAS</h2>
         <div class="logros">
-          <div class="info-logro">
+          <div class="info-logro" onclick="window.location.href='infoLogro.html'">
             <img src="Imagenes/LOGROS/carta.png" alt="">
             <div class="nombre-descripcion">
               <h3 class="nombre">Carta</h3>
@@ -214,7 +246,7 @@
             </div>
           </div>
         </div>
-
+    </div>
     </main>
     
 </body>

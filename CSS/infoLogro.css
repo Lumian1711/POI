@@ -1,0 +1,42 @@
+:root{
+    --azul: #016180;
+    --celeste: #4A8CB0;
+    --crema: #f0d4c0;
+    --cafe: #a88474;
+    --marron: #4C2C17;
+}
+.barra .navegacion #logros{
+    background-color: var(--azul);
+}
+*{
+    font-family: 'Outfit', sans-serif;
+}
+/*--------LOGROS----------*/
+.main-contenedor{
+    height: 100%;
+    background-color: var(--cafe);
+    border-radius: 20px;
+}
+.main-contenedor h2{
+    padding: 10px;
+    font-weight: 600;
+    text-align: center;
+    color: var(--crema);
+}
+.nombre-descripcion h3{
+    padding: 10px;
+    text-align: center;
+}
+.main-contenedor img{
+    width: 300px;
+    height: 100%;
+}
+.logros {
+    text-align: center;
+    color: var(--crema);
+}
+.info-logro .nombre-descripcion{
+    align-items: center;
+    justify-content: center;
+}
+
