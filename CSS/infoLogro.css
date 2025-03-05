@@ -28,15 +28,22 @@
     text-align: center;
 }
 .main-contenedor img{
-    width: 300px;
-    height: 100%;
+    width: 350px;
+    height: 350px;
 }
 .logros {
     text-align: center;
     color: var(--crema);
+    display: flex;
+}
+.info-logro{
+    width: 100%;
 }
 .info-logro .nombre-descripcion{
     align-items: center;
     justify-content: center;
+}
+.info-logro span{
+    font-size: 20px;
 }
 
