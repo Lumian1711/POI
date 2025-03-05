@@ -151,7 +151,9 @@
     display: flex;
     justify-content: end;
 }
-
+.message a{
+    color: var(--marron);
+}
 .message-usuario-2 .text{
     background-color: var(--celeste);
     color: var(--marron);
