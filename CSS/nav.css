@@ -198,3 +198,11 @@ main{
     display: block;
     color: var(--crema);
 }
+.list-group-item{
+    background-color: var(--celeste);
+    color: var(--crema);
+}
+.list-group-item:hover{
+    background-color: var(--azul);
+    color: var(--crema);
+}

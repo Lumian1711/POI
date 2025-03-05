@@ -63,28 +63,37 @@
     <!--MODALES-->
         <!-- Modal nuevo mensaje -->
         <div class="modal fade" id="modalNuevoMensaje" tabindex="-1" aria-labelledby="modalNuevoMensajeLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
               <div class="modal-content">
                   <div class="modal-header">
                       <h5 class="modal-title" id="modalNuevoMensajeLabel">Nuevo chat</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
-                  <div class="modal-body">
-                    <form method="POST" action="">
-                      <div class="mb-3">
-                        <label class="form-label">Tipo de chat</label>
-                        <select class="form-control" name="tipoChat" id="tipoChat">
-                          <option value="privado">Privado</option>
-                          <option value="grupal">Grupal</option>
-                        </select>
-                      </div>
-                      <div class="mb-3">
-                        <label class="form-label">Nombre de usuario</label>
-                        <input id="txtUsuario" name="txtUsuario" class="form-control" type="text" required placeholder="Nombre de usuario">
-                      </div>
-                      <div id="extraUsuario"></div>
-                    </form>
+                  <div class="modal-body d-flex">
+                    <!-- Formulario -->
+                    <div class="w-50 pe-3">
+                      <form method="POST" action="">
+                        <div class="mb-3">
+                          <label class="form-label">Tipo de chat</label>
+                          <select class="form-control" name="tipoChat" id="tipoChat">
+                            <option value="privado">Privado</option>
+                            <option value="grupal">Grupal</option>
+                          </select>
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label">Nombre de usuario</label>
+                          <input id="txtUsuario" name="txtUsuario" class="form-control" type="text" required placeholder="Nombre de usuario">
+                        </div>
+                        <div id="extraUsuario"></div>
+                      </form>
+                    </div>
                     
+                    <!-- Lista de usuarios -->
+                    <div class="w-50 border-start ps-3" style="max-height: 300px; overflow-y: auto;">
+                      <h6>Usuarios existentes</h6>
+                      <ul class="list-group" id="listaUsuarios">
+                      </ul>
+                    </div>
                   </div>
                   <div class="modal-footer">
                       <button type="button" class="btn" data-bs-dismiss="modal">Cancelar</button>
@@ -93,6 +102,24 @@
               </div>
           </div>
         </div>
+        
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+            const listaUsuarios = document.getElementById("listaUsuarios");
+            const usuarios = ["usuario1", "usuario2", "usuario3", "usuario4", "usuario5", "usuario6", "usuario7"]; // Reemplazar con datos dinámicos
+            
+            usuarios.forEach(usuario => {
+              const li = document.createElement("li");
+              li.classList.add("list-group-item", "list-group-item-action");
+              li.textContent = usuario;
+              li.style.cursor = "pointer";
+              li.addEventListener("click", function() {
+                document.getElementById("txtUsuario").value = usuario;
+              });
+              listaUsuarios.appendChild(li);
+            });
+          });
+        </script>
         <!-- Modal LOGRO -->
         <div class="modal fade" id="modalNuevoMensaje" tabindex="-1" aria-labelledby="modalLogroLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
