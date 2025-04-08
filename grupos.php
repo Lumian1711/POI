@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/bootstrap.min.css">
-    <link rel="stylesheet" href="CSS/chats.css">
+    <link rel="stylesheet" href="CSS/grupos.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100&icon_names=favorite,home,search,settings" rel="stylesheet" />    
     <link rel="stylesheet" href="CSS/nav.css">
     <link rel="icon" href="Imagenes/LOGO/Color-ico.ico" type="image/x-icon">
-    <title>Chats</title>
+    <title>Grupos</title>
 </head>
 <body>
     <!--nav-->
@@ -23,19 +23,19 @@
       </button>
       <nav class="navegacion">
           <li>
-            <a id="chats" href="chats.html">
+            <a id="chats" href="chats.php">
               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M320-320h480v-120H698q-21 37-58 58.5T560-360q-42 0-79-21.5T422-440H320v120Zm240-120q34 0 57-23.5t23-56.5h160v-280H320v280h160q0 33 23.5 56.5T560-440ZM320-240q-33 0-56.5-23.5T240-320v-480q0-33 23.5-56.5T320-880h480q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H320ZM160-80q-33 0-56.5-23.5T80-160v-560h80v560h560v80H160Zm160-240h480-480Z"/></svg>
               <span>Chats</span>
             </a>
           </li>
           <li>
-            <a id="grupos" href="grupos.html">
+            <a id="grupos" href="grupos.php">
               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29 15 46.5 43.5T680-272v112H40Zm720 0v-120q0-44-24.5-84.5T666-434q51 6 96 20.5t84 35.5q36 20 55 44.5t19 53.5v120H760ZM360-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm400-160q0 66-47 113t-113 47q-11 0-28-2.5t-28-5.5q27-32 41.5-71t14.5-81q0-42-14.5-81T544-792q14-5 28-6.5t28-1.5q66 0 113 47t47 113ZM120-240h480v-32q0-11-5.5-20T580-306q-54-27-109-40.5T360-360q-56 0-111 13.5T140-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T440-640q0-33-23.5-56.5T360-720q-33 0-56.5 23.5T280-640q0 33 23.5 56.5T360-560Zm0 320Zm0-400Z"/></svg>
               <span>Grupos</span>
             </a>
           </li>
           <li>
-            <a id="logros" href="logros.html">
+            <a id="logros" href="logros.php">
               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M280-120v-80h160v-124q-49-11-87.5-41.5T296-442q-75-9-125.5-65.5T120-640v-40q0-33 23.5-56.5T200-760h80v-80h400v80h80q33 0 56.5 23.5T840-680v40q0 76-50.5 132.5T664-442q-18 46-56.5 76.5T520-324v124h160v80H280Zm0-408v-152h-80v40q0 38 22 68.5t58 43.5Zm200 128q50 0 85-35t35-85v-240H360v240q0 50 35 85t85 35Zm200-128q36-13 58-43.5t22-68.5v-40h-80v152Zm-200-52Z"/></svg>
               <span>Logros</span>
             </a>
@@ -148,7 +148,6 @@
             });
           });
         </script>
-        
         <!-- Modal Editar usuario -->
         <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="modalEditarLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
@@ -192,7 +191,7 @@
                       <p>¡Movimiento exitoso!</p>
                   </div>
                   <div class="modal-footer">
-                      <button type="button" data-bs-dismiss="modal" class="btn">Cerrar</button>
+                      <a href="chats.html" class="btn">Cerrar</a>
                   </div>
               </div>
           </div>
@@ -217,50 +216,72 @@
         </div>
 
     <!--MAIN-->
-  <main>
-    <div class="lista-chat">
-          <!-- LISTA CHATS -->
-        <div class="lista col-5">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item ">
-                <a href="">
-                  <img id="maestriaLista" src="Imagenes/LOGROS/logro-des.png">
-                  <label>Nombre de Usuario</label>
-                </a>
-              </li>
-              <li class="list-group-item ">
-                <a href="">
+    <main>
+      <div class="lista-chat">
+          <div class="lista col-5">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item ">
+                  <a href="">
                     <img id="maestriaLista" src="Imagenes/LOGROS/carta.png">
-                    <label>Nombre de Usuario</label>
-                </a>
-              </li>
-              <li class="list-group-item ">
-                <a href="">
-                    <img id="maestriaLista" src="Imagenes/LOGROS/logro-des.png">
-                    <label>Nombre de Usuario</label>
-                </a>
-              </li>
-              <li class="list-group-item ">
-                <a href="">
+                    <label>Nombre del grupo</label>
+                  </a>
+                </li>
+                <li class="list-group-item ">
+                  <a href="">
                     <img id="maestriaLista" src="Imagenes/LOGROS/carta.png">
-                    <label>Nombre de Usuario</label>
-                </a>
-              </li>
-              <li class="list-group-item ">
-                <a href="">
-                    <img id="maestriaLista" src="Imagenes/LOGROS/logro-des.png">
-                    <label>Nombre de Usuario</label>
-                </a>
-              </li>
-              <li class="list-group-item ">
-                <a href="">
+                    <label>Nombre del grupo</label>
+                  </a>
+                </li>
+                <li class="list-group-item ">
+                  <a href="">
                     <img id="maestriaLista" src="Imagenes/LOGROS/carta.png">
-                    <label>Nombre de Usuario</label>
-                </a>
-              </li>
-
-            </ul>
-        </div>
+                    <label>Nombre del grupo</label>
+                  </a>
+                </li>
+                <li class="list-group-item ">
+                  <a href="">
+                    <img id="maestriaLista" src="Imagenes/LOGROS/carta.png">
+                    <label>Nombre del grupo</label>
+                  </a>
+                </li>
+                <li class="list-group-item ">
+                  <a href="">
+                    <img id="maestriaLista" src="Imagenes/LOGROS/carta.png">
+                    <label>Nombre del grupo</label>
+                  </a>
+                </li>
+                <li class="list-group-item ">
+                  <a href="">
+                    <img id="maestriaLista" src="Imagenes/LOGROS/carta.png">
+                    <label>Nombre del grupo</label>
+                  </a>
+                </li>
+                <li class="list-group-item ">
+                  <a href="">
+                    <img id="maestriaLista" src="Imagenes/LOGROS/carta.png">
+                    <label>Nombre del grupo</label>
+                  </a>
+                </li>
+                <li class="list-group-item ">
+                  <a href="">
+                    <img id="maestriaLista" src="Imagenes/LOGROS/carta.png">
+                    <label>Nombre del grupo</label>
+                  </a>
+                </li>
+                <li class="list-group-item ">
+                  <a href="">
+                    <img id="maestriaLista" src="Imagenes/LOGROS/carta.png">
+                    <label>Nombre del grupo</label>
+                  </a>
+                </li>
+                <li class="list-group-item ">
+                  <a href="">
+                    <img id="maestriaLista" src="Imagenes/LOGROS/carta.png">
+                    <label>Nombre del grupo</label>
+                  </a>
+                </li>
+              </ul>
+          </div>
         <!-- CONTENEDOR CHAT y TAREAS-->
         <div class="chat col-7" id="contenedorChat">
           <div class="chat-header">
@@ -268,15 +289,11 @@
                   <div class="h-left">
                       <div>
                           <img id="maestriaHader" src="Imagenes/LOGROS/carta.png" class="rounded-circle">
-                          <label>Nombre de usuario</label>
+                          <label>Nombre del grupo</label>
                       </div>
                   </div>
                   <div class="h-right">
-                      <a name="videocat" href="llamada.html" class="btn chat-privado">
-                          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
-                              <path d="M360-320h80v-120h120v-80H440v-120h-80v120H240v80h120v120ZM160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h480q33 0 56.5 23.5T720-720v180l160-160v440L720-420v180q0 33-23.5 56.5T640-160H160Zm0-80h480v-480H160v480Zm0 0v-480 480Z"/>
-                          </svg>
-                      </a>
+                      <a id="opciones-usuario" class="btn chat-privado"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff"><path d="M222-200 80-342l56-56 85 85 170-170 56 57-225 226Zm0-320L80-662l56-56 85 85 170-170 56 57-225 226Zm298 240v-80h360v80H520Zm0-320v-80h360v80H520Z"/></svg></a>
                   </div>
               </div>
           </div>
@@ -285,27 +302,27 @@
                   <div id="idChatMensaje" class="message message-usuario-1">
                       <img id="maestriaUsuario2" src="Imagenes/LOGROS/carta.png">
                       <div class="hour-message">
-                          <label class="user-1">Nombre de Usuario 2</label>
-                          <label class="text">Hola! ¿Ya leiste el libro que te recomende?</label>
+                          <label class="user-1">Nombre de Usuario 1</label>
+                          <label class="text">Hola?</label>
                           <label class="hour">00:00</label>
                       </div>
                   </div>
                   <div id="idChatMensaje" class="message message-usuario-2">
                       <div class="hour-message">
-                          <label class="user-2">Nombre de Usuario</label>
-                          <label class="text">¡Hola!</label>
+                          <label class="user-2">Nombre de Usuario 2</label>
+                          <label class="text">¡Qué hago aqui?</label>
                           <label class="hour">00:00</label>
                       </div>
                       <img id="maestriaUsuario" src="Imagenes/LOGROS/carta.png">
                   </div>
-                  <div id="idChatMensaje" class="message message-usuario-2">
-                      <div class="hour-message">
-                          <label class="user-2">Nombre de Usuario</label>
-                          <label class="text"><a href="Imagenes/LOGROS/carta.png" download="Carta.png"> <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff"><path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/></svg>Carta.png</a></label>
-                          <label class="hour">00:00</label>
-                      </div>
-                      <img id="maestriaUsuario" src="Imagenes/LOGROS/carta.png">
-                  </div>
+                  <div id="idChatMensaje" class="message message-usuario-1">
+                    <img id="maestriaUsuario2" src="Imagenes/LOGROS/carta.png">
+                    <div class="hour-message">
+                        <label class="user-1">Nombre de Usuario 3</label>
+                        <label class="text">¡Mamá?</label>
+                        <label class="hour">00:00</label>
+                    </div>
+                </div>
               </div>
               <div id="tareas-contenido" class="d-none">
                   <form id="formTarea" class="mb-3">
@@ -333,17 +350,17 @@
                   <button id="btnGuardar" class="btn"data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#modalAlert">Guardar Cambios</button>
               </div>
           </div>
-          <form method="POST" class="chat-input"> 
+          <form method="POST" class="chat-input">   
             <button type="button" data-bs-toggle="modal" data-bs-target="#modalAdjunto" id="btnFile" class="btn"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff"><path d="M720-330q0 104-73 177T470-80q-104 0-177-73t-73-177v-370q0-75 52.5-127.5T400-880q75 0 127.5 52.5T580-700v350q0 46-32 78t-78 32q-46 0-78-32t-32-78v-370h80v370q0 13 8.5 21.5T470-320q13 0 21.5-8.5T500-350v-350q-1-42-29.5-71T400-800q-42 0-71 29t-29 71v370q-1 71 49 120.5T470-160q70 0 119-49.5T640-330v-390h80v390Z"/></svg></button>
             <input type="text" placeholder="Escribe tu mensaje..." id="mensajeInput"></input>
-            <button type="button" id="btnEnviar" class="btn">Enviar</button>
+            <button type="button" id="btnEnviar" class="btn btn-primary">Enviar</button>
         </form>
       </div>
-    </div>
-  </main>
+      </div>
+    </main>
 </body>
 <script src="JS/tareas.js"></script>
+<script src="JS/jquery-3.7.1.min.js"></script>
 <script src="JS/navbar.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="JS/jquery-3.7.1.min.js"></script>
 </html>
