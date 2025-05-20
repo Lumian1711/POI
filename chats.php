@@ -420,4 +420,26 @@
 <script src="JS/navbar.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="JS/jquery-3.7.1.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  function cargarMensajes() {
+    $.ajax({
+      url: 'cargar_mensajes.php',
+      method: 'GET',
+      success: function(respuesta) {
+        $('#chat-contenido').html(respuesta);
+      },
+      error: function() {
+        console.error('Error al cargar los mensajes.');
+      }
+    });
+  }
+
+  // Cargar mensajes cada 5 segundos
+  setInterval(cargarMensajes, 3000);
+
+  // También cargarlos al inicio
+  cargarMensajes();
+
 </html>
