@@ -225,51 +225,39 @@
         <h2>MAESTRIAS</h2>
         <div class="logros">
           <div class="info-logro" onclick="window.location.href='infoLogro.html'">
-            <img src="Imagenes/LOGROS/carta.png" alt="">
+            <img src="Imagenes/LOGROS/LOGRO/carta.png" alt="">
             <div class="nombre-descripcion">
               <h3 class="nombre">Carta</h3>
             </div>
           </div>
           <div class="info-logro">
-            <img src="Imagenes/LOGROS/logro-des.png" alt="">
+            <img src="Imagenes/LOGROS/LOGRO/pergamino.png" alt="">
             <div class="nombre-descripcion">
               <h3 class="nombre">Pergamino</h3>
             </div>
           </div>
           <div class="info-logro">
-            <img src="Imagenes/LOGROS/logro-des.png" alt="">
+            <img src="Imagenes/LOGROS/LOGRO/codice.png" alt="">
             <div class="nombre-descripcion">
               <h3 class="nombre">Códice</h3>
             </div>
           </div>
           <div class="info-logro">
-            <img src="Imagenes/LOGROS/logro-des.png" alt="">
+            <img src="Imagenes/LOGROS/LOGRO/manuscrito.png" alt="">
             <div class="nombre-descripcion">
               <h3 class="nombre">Manuscrito</h3>
             </div>
           </div>
           <div class="info-logro">
-            <img src="Imagenes/LOGROS/logro-des.png" alt="">
+            <img src="Imagenes/LOGROS/LOGRO/libro.png" alt="">
             <div class="nombre-descripcion">
               <h3 class="nombre">Libro</h3>
             </div>
           </div>
           <div class="info-logro">
-            <img src="Imagenes/LOGROS/logro-des.png" alt="">
+            <img src="Imagenes/LOGROS/LOGRO/saga.png" alt="">
             <div class="nombre-descripcion">
               <h3 class="nombre">Saga</h3>
-            </div>
-          </div>
-          <div class="info-logro">
-            <img src="Imagenes/LOGROS/logro-des.png" alt="">
-            <div class="nombre-descripcion">
-              <h3 class="nombre">Enciclopedia</h3>
-            </div>
-          </div>
-          <div class="info-logro">
-            <img src="Imagenes/LOGROS/logro-des.png" alt="">
-            <div class="nombre-descripcion">
-              <h3 class="nombre">Biblioteca</h3>
             </div>
           </div>
         </div>
