@@ -11,6 +11,7 @@
 *{
     font-family: 'Outfit', sans-serif;
 }
+
 /* Contenedor Lista-Chat */
 .lista-chat{
     display: flex;
@@ -146,6 +147,7 @@
 .message-usuario-1 .text{
     background-color: var(--cafe);
     color: var(--marron);
+    
 }
 .message-usuario-2{
     display: flex;
@@ -196,6 +198,7 @@ form textarea:focus{
     background-color: black;
     color: white;
 }
+
 /*-----------TAREAS---------------*/
 #formTarea{
     background-color: var(--celeste);

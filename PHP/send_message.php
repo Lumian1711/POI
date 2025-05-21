@@ -2,40 +2,51 @@
 session_start();
 include('conexion.php');
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $id_user = intval($_POST['id_user']);
+    $id_chat = intval($_POST['id_chat']);
+    $mensaje = trim($_POST['mensajeInput']);
 
-    $sender = $_SESSION['id_user'];
-    $content = $_POST['mensajeInput'];
-    $id_chat = 1;
-    $id_group = NULL; 
-    $mssg_type = 'text';
-    $coded = 1;
+    if (!empty($mensaje)) {
 
-    $sql = "INSERT INTO messages (id_chat, id_group, id_sender, content, mssg_type, sndng_date, coded) 
-            VALUES (?, ?, ?, ?, ?, NOW(), ?)";
-
-    $stmt = $conn->prepare($sql);
-    if ($stmt === false) {
-        die('Error al preparar la consulta: ' . $conn->error);
+        $sql = "INSERT INTO messages (id_chat, id_sender, content, mssg_type, sndng_date, coded) 
+                VALUES (?, ?, ?, 'text', NOW(), 1)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("iis", $id_chat, $id_user, $mensaje);
+        $stmt->execute();
+        $stmt->close();
     }
 
-    // b: integer (id_chat)
-    // i: integer (id_group) -> puede ser null
-    // i: integer (id_sender)
-    // s: string (content)
-    // s: string (mssg_type)
-    // i: integer (coded)
-    $stmt->bind_param("iiissi", $id_chat, $id_group, $sender, $content, $mssg_type, $coded);
+    // 2. Enviar archivo (si se cargó uno)
+    if (isset($_FILES['archivoAdjunto']) && $_FILES['archivoAdjunto']['error'] === UPLOAD_ERR_OK) {
+        $nombreOriginal = $_FILES['archivoAdjunto']['name'];
+        $archivoTmp = $_FILES['archivoAdjunto']['tmp_name'];
+        $rutaDestino = 'uploads/' . basename($nombreOriginal);
 
-    if ($stmt->execute()) {
-        header("Location: ../chats.php");
-        exit();
-    } else {
-        echo "Error: " . $stmt->error;
+        // Crear carpeta si no existe
+        if (!file_exists('uploads')) {
+            mkdir('uploads', 0755, true);
+        }
+
+        if (move_uploaded_file($archivoTmp, $rutaDestino)) {
+            // Guardar el archivo como mensaje
+            $sql = "INSERT INTO messages (id_chat, id_sender, content, mssg_type, sndng_date, coded) 
+                    VALUES (?, ?, ?, 'file', NOW(), 1)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("iis", $id_chat, $id_user, $rutaDestino);
+            $stmt->execute();
+            $stmt->close();
+        } else {
+            echo "❌ Error al subir el archivo.";
+        }
     }
 
-    // Cerrar conexión
-    $stmt->close();
     $conn->close();
+
+    echo "<script>
+    window.location = document.referrer;
+    </script>";
+    exit();
+
 }
 ?>
