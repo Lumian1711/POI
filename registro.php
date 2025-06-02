@@ -19,7 +19,7 @@
             <div class="form-container">
 
                 <h2>Registra tus datos</h2>
-                <form method="POST" action="../PHP/registro.php">
+                <form method="POST" action="PHP/registro.php">
                     <div class="mb-3">
 
                         <label class="form-label">Nombre de usuario</label>

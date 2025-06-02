@@ -50,7 +50,7 @@ if ($resultado->num_rows > 0) {
         $_SESSION['mail'] = $row['mail'];
 
         // Redirigir al chat
-        header("Location: ../login.php");
+        header("Location: ../chats.php");
         exit();
     }
 } else {

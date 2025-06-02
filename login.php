@@ -17,7 +17,7 @@
         <div class="right-side">
             <div class="form-container">
                 <h2>Iniciar Sesión</h2>
-                <form method="POST" action="../PHP/login.php">
+                <form method="POST" action="PHP/login.php">
                     <div class="mb-3">
 
                         <label class="form-label">Correo</label>
@@ -34,7 +34,7 @@
                     </div>
                     <div class="mt-3">
 
-                        <p>¿No tienes una cuenta? <a href="registro.html"> Regístrate</a></p>
+                        <p>¿No tienes una cuenta? <a href="registro.php"> Regístrate</a></p>
                     </div>
                 </form>
             </div>

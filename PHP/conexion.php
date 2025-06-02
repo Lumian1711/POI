@@ -3,7 +3,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "";     
-    $database = "poi_bd";
+    $database = "poi_bd_pv";
 
     // Crear conexión
     $conn = new mysqli($servername, $username, $password, $database);

@@ -100,7 +100,7 @@
               <div class="modal-footer">
 
                   <button type="button" class="btn" data-bs-dismiss="modal">Cancelar</button>
-                  <a href="../PHP/logout.php" class="btn">Cerrar Sesión</a>
+                  <a href="PHP/logout.php" class="btn">Cerrar Sesión</a>
               </div>
           </div>
       </div>
@@ -174,7 +174,7 @@
                     <?php endif; ?>
                   </div>
                   <div class="h-right">
-                    <a name="videocat" href="llamada.html" class="btn chat-privado">
+                    <a name="videocat" href="public/chat.php" class="btn chat-privado">
                       <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
                         <path d="M360-320h80v-120h120v-80H440v-120h-80v120H240v80h120v120ZM160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h480q33 0 56.5 23.5T720-720v180l160-160v440L720-420v180q0 33-23.5 56.5T640-160H160Zm0-80h480v-480H160v480Zm0 0v-480 480Z"/>
                       </svg>
