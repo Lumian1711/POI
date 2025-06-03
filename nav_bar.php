@@ -125,13 +125,12 @@
 
                 <!-- Formulario -->
                 <div class="w-50 pe-3">
-                  <form method="POST" action="">
+                  <form method="POST" action="PHP/crear_chat.php">
                     <div class="mb-3">
                       <label class="form-label">Tipo de chat</label>
-                      <select class="form-control" name="tipoChat" id="tipoChat">
-
-                        <option value="privado">Privado</option>
-                        <option value="grupal">Grupal</option>
+                      <select class="form-control" name="tipoChat" id="tipoChat" required>
+                        <option value="Privado">Privado</option>
+                        <option value="Grupal">Grupal</option>
                       </select>
                     </div>
                     <div class="mb-3">
@@ -139,6 +138,7 @@
                       <input id="txtUsuario" name="txtUsuario" class="form-control" type="text" required placeholder="Nombre de usuario">
                     </div>
                     <div id="extraUsuario"></div>
+                    <button type="submit" class="btn btn-primary">Crear chat</button>
                   </form>
                 </div>
                 
@@ -148,11 +148,12 @@
                   <ul class="list-group" id="listaUsuarios">
                     <?php 
                       $sql = "SELECT name FROM user ORDER BY name ASC";
-                      $resultado = $conn->query($sql); // No necesitas prepare() aquí
+                      $resultado = $conn->query($sql);
 
                       if ($resultado && $resultado->num_rows > 0) {
                           while ($row = $resultado->fetch_assoc()) {
-                              echo "<li class='list-group-item'>" . htmlspecialchars($row['name']) . "</li>";
+                              echo "<li class='list-group-item list-group-item-action' style='cursor:pointer;' onclick=\"seleccionarUsuario('" . htmlspecialchars($row['name'], ENT_QUOTES) . "')\">" . htmlspecialchars($row['name']) . "</li>";
+
                           }
                       } else {
                           echo "<li class='list-group-item text-muted'>No hay usuarios registrados.</li>";
@@ -170,3 +171,4 @@
           </div>
       </div>
     </div>
+    

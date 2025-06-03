@@ -15,24 +15,6 @@
     
     <?php include('PHP/conexion.php'); ?>
     <?php include('nav_bar.php'); ?>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        const listaUsuarios = document.getElementById("listaUsuarios");
-        const usuarios = ["usuario1", "usuario2", "usuario3", "usuario4", "usuario5", "usuario6", "usuario7"]; // Reemplazar con datos dinámicos
-        
-        usuarios.forEach(usuario => {
-          const li = document.createElement("li");
-          li.classList.add("list-group-item", "list-group-item-action");
-          li.textContent = usuario;
-          li.style.cursor = "pointer";
-          li.addEventListener("click", function() {
-            document.getElementById("txtUsuario").value = usuario;
-          });
-          listaUsuarios.appendChild(li);
-        });
-      });
-    </script>
     
     <!-- Modal Editar usuario -->
     <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="modalEditarLabel" aria-hidden="true">
@@ -112,15 +94,13 @@
     <div class="lista-chat">
       <?php
         $id_user = intval($_SESSION['id_user']);
-        $id_chat = intval($_GET['id_chat']); // Aquí usamos el chat como si fuera grupo
+        $id_chat = intval($_GET['id_chat']);
 
         $sql = "SELECT u.name, c.crea_date, c.id_chat
                 FROM user_group ug
                 JOIN user u ON ug.id_user = u.id_user
-                JOIN chats c ON c.id_chat = ug.id_group
-                WHERE ug.id_user != ?
-                  AND c.tipo = 1
-                LIMIT 1"; // Solo queremos al otro
+                JOIN chats c ON ug.id_group = c.id_chat
+                WHERE ug.id_user != ? AND c.tipo = 1";
 
         $stmt = $conn->prepare($sql);
         $stmt->bind_param('i', $id_user);
@@ -128,12 +108,12 @@
         $resultado = $stmt->get_result();
 
         if ($row = $resultado->fetch_assoc()) {
-            $invited = $row['name'];       // <- Este es el otro usuario
-            $date = $row['crea_date'];     // <- Fecha de creación del chat
-            $chat = $row['id_chat'];
+          $invited = $row['name'];       // <- Este es el otro usuario
+          $date = $row['crea_date'];     // <- Fecha de creación del chat
+          $chat = $row['id_chat'];
         } else {
-            $invited = "Usuario desconocido";
-            $date = "Fecha no disponible";
+          $invited = "Usuario desconocido";
+          $date = "Fecha no disponible";
         }
 
         $stmt->close();
@@ -143,17 +123,17 @@
       <div class="lista col-5 mx-2"> 
           <ul class="list-group list-group-flush">
             <?php if ($resultado->num_rows > 0): ?>
-              <div class="list-group-item rounded-4" onclick="location.href='chats.php?id_chat=<?php echo $chat ?>'">
-
-                <h3><strong><?php echo htmlspecialchars($invited); ?></strong></h3>
-                <p><strong>Creado el:</strong> <?php echo htmlspecialchars($date); ?></p>
-              </div>
+              <?php while($row = $resultado->fetch_assoc()): ?>
+                <div class="list-group-item rounded-4" onclick="location.href='chats.php?id_chat=<?php echo $row['id_chat']; ?>'">
+                  <h3><strong><?php echo htmlspecialchars($invited); ?></strong></h3>
+                  <p><strong>Creado el:</strong> <?php echo htmlspecialchars($row['crea_date']); ?></p>
+                </div>
+              <?php endwhile; ?>
             <?php else: ?>
               <div class="no-chats">
-
-                  <p>No hay chats por el momento. Da clic en Nuevo Chat</p>
+                <p>No hay chats por el momento. Da clic en Nuevo Chat</p>
               </div>
-            <?php endif;  ?>
+            <?php endif; ?>
           </ul>
       </div>
 
@@ -165,7 +145,7 @@
                     <?php if($id_chat > 0): ?>
                         
                       <img id="maestriaHader" src="Imagenes/LOGROS/carta.png" class="rounded-circle">
-                      <label><?php echo htmlspecialchars($invited); ?></label>
+                      <label><?php echo 'Chat con ' . htmlspecialchars($invited); ?></label>
                     <?php else: ?>
                       <div class="no-chats">
 
@@ -186,7 +166,7 @@
           <div class="chat-messages overflow-auto" id="contenidoChat">
             <div id="chat-contenido">
               <?php
-                // Consulta para traer mensajes del chat 1, ordenados por fecha ascendente
+                // Consulta para traer mensajes del chat, ordenados por fecha ascendente
                 $sql = "SELECT id_sender, content, sndng_date 
                     FROM messages 
                     WHERE id_chat = ? 
@@ -255,7 +235,9 @@
             <!-- Botón para abrir el explorador de archivos -->
             <label for="archivoAdjunto" class="btn">
               <!-- Puedes poner aquí tu ícono SVG o texto -->
-              📎
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-paperclip" viewBox="0 0 16 16">
+                <path d="M4.5 3a2.5 2.5 0 0 1 5 0v9a1.5 1.5 0 0 1-3 0V5a.5.5 0 0 1 1 0v7a.5.5 0 0 0 1 0V3a1.5 1.5 0 1 0-3 0v9a2.5 2.5 0 0 0 5 0V5a.5.5 0 0 1 1 0v7a3.5 3.5 0 1 1-7 0z"/>
+              </svg>
             </label>
             <!-- Input de tipo file oculto -->
             <input type="file" name="archivoAdjunto" id="archivoAdjunto" style="display: none;">
@@ -315,5 +297,6 @@
       contenedor.scrollTop = contenedor.scrollHeight;
     };
   </script>
+
 </body>
 </html>
