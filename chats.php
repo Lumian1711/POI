@@ -93,72 +93,51 @@
   <main> 
     <div class="lista-chat">
       <?php
-$id_user = intval($_SESSION['id_user']);
-$id_chat = isset($_GET['id_chat']) ? intval($_GET['id_chat']) : null;
+        $id_user = intval($_SESSION['id_user']);
+        $id_chat = intval($_GET['id_chat']); // Aquí usamos el chat como si fuera grupo
 
-// Consulta para obtener chats donde el usuario participa, con el nombre del otro usuario en chats privados
-$sql = "
-    SELECT c.id_chat, c.crea_date,
-           u.name AS invited_name
-    FROM user_group ug
-    JOIN chats c ON ug.id_group = c.id_chat
-    JOIN user u ON u.id_user = (
-        SELECT id_user FROM user_group
-        WHERE id_group = c.id_chat AND id_user != ?
-        LIMIT 1
-    )
-    WHERE ug.id_user = ? AND c.tipo = 1
-    GROUP BY c.id_chat
-    ORDER BY c.crea_date DESC
-";
+        $sql = "SELECT u.name, c.crea_date, c.id_chat
+                FROM user_group ug
+                JOIN user u ON ug.id_user = u.id_user
+                JOIN chats c ON c.id_chat = ug.id_group
+                WHERE ug.id_user != ?
+                  AND c.tipo = 1
+                LIMIT 1"; // Solo queremos al otro
 
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("ii", $id_user, $id_user);
 $stmt->execute();
 $resultado = $stmt->get_result();
 
-$invited = "Usuario desconocido"; // valor por defecto
+        if ($row = $resultado->fetch_assoc()) {
+            $invited = $row['name'];       // <- Este es el otro usuario
+            $date = $row['crea_date'];     // <- Fecha de creación del chat
+            $chat = $row['id_chat'];
+        } else {
+            $invited = "Usuario desconocido";
+            $date = "Fecha no disponible";
+        }
 
-if ($id_chat) {
-    $sqlInvited = "
-        SELECT u.name
-        FROM user_group ug
-        JOIN user u ON ug.id_user = u.id_user
-        WHERE ug.id_group = ? AND ug.id_user != ?
-        LIMIT 1
-    ";
-    $stmtInvited = $conn->prepare($sqlInvited);
-    $stmtInvited->bind_param("ii", $id_chat, $id_user);
-    $stmtInvited->execute();
-    $resultInvited = $stmtInvited->get_result();
-    if ($rowInvited = $resultInvited->fetch_assoc()) {
-        $invited = $rowInvited['name'];
-    }
-    $stmtInvited->close();
-}
+        $stmt->close();
+      ?>
 
-?>
+      <!-- LISTA CHATS -->
+      <div class="lista col-5 mx-2"> 
+          <ul class="list-group list-group-flush">
+            <?php if ($resultado->num_rows > 0): ?>
+              <div class="list-group-item rounded-4" onclick="location.href='chats.php?id_chat=<?php echo $chat ?>'">
 
+                <h3><strong><?php echo htmlspecialchars($invited); ?></strong></h3>
+                <p><strong>Creado el:</strong> <?php echo htmlspecialchars($date); ?></p>
+              </div>
+            <?php else: ?>
+              <div class="no-chats">
 
-
-<!-- LISTA CHATS -->
-<div class="lista col-5 mx-2"> 
-  <ul class="list-group list-group-flush">
-    <?php if ($resultado->num_rows > 0): ?>
-      <?php while($row = $resultado->fetch_assoc()): ?>
-        <div class="list-group-item rounded-4" onclick="location.href='chats.php?id_chat=<?php echo $row['id_chat']; ?>'">
-          <h3><strong><?php echo htmlspecialchars($row['invited_name']); ?></strong></h3>
-          <p><strong>Creado el:</strong> <?php echo htmlspecialchars($row['crea_date']); ?></p>
-        </div>
-      <?php endwhile; ?>
-    <?php else: ?>
-      <div class="no-chats">
-        <p>No hay chats por el momento. Da clic en Nuevo Chat</p>
+                  <p>No hay chats por el momento. Da clic en Nuevo Chat</p>
+              </div>
+            <?php endif;  ?>
+          </ul>
       </div>
-    <?php endif; ?>
-  </ul>
-</div>
-
 
         <!-- CONTENEDOR CHAT y TAREAS-->
         <div class="chat col-7" id="contenedorChat">

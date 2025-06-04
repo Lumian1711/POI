@@ -154,8 +154,9 @@ $stmt_logro->close();
                   <form method="POST" action="PHP/crear_chat.php">
                     <div class="mb-3">
                       <label class="form-label">Tipo de chat</label>
-                      <select class="form-control" name="tipoChat" id="tipoChat" required>
-                        <option value="Privado">Privado</option>
+                      <select class="form-control" name="tipoChat" id="tipoChat">
+
+                        <option value="privado">Privado</option>
                         <option value="grupal">Grupal</option>
                       </select>
                     </div>
