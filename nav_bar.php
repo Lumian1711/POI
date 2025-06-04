@@ -10,7 +10,7 @@ $sql_logro = "SELECT l.imagen_ruta
               FROM logros_usuario lu
               INNER JOIN logros l ON lu.id_logro = l.id_logro
               WHERE lu.id_user = ?
-              ORDER BY lu.fecha_otorgado DESC
+              ORDER BY lu.id_logro DESC
               LIMIT 1";
 
 $stmt_logro = $conn->prepare($sql_logro);
