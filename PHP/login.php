@@ -28,9 +28,22 @@ if ($resultado->num_rows > 0) {
         $_SESSION['name'] = $row['name'];
         $_SESSION['mail'] = $row['mail'];
 
-        // Redirigir al chat
-        header("Location: ../chats.php");
-        exit();
+        $query="UPDATE user SET conn_stat = 1 WHERE id_user = ?";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("i", $_SESSION['id_user']);
+        $stmt->execute();
+
+        if ($stmt->affected_rows > 0) {
+            // Redirigir al chat
+            $stmt->close();
+            header("Location: ../chats.php?id_chat=0");
+            exit();
+        } else {
+            $stmt->close();
+            header("Location: ../chats.php?id_chat=0");
+            exit();
+        }
+
     } else {
         $_SESSION['id_user'] = $row['id_user'];
         $_SESSION['name'] = $row['name'];

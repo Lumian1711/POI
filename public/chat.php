@@ -309,7 +309,7 @@
 
 <script>
   document.getElementById('send1').onclick = () => {
-    window.location.href = '../chats.php';
+    window.location.href = '../chats.php?id_chat=0';
   };
 </script>
 
